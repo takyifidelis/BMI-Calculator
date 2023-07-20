@@ -43,7 +43,7 @@ body {
 .bmi-header {
   /* Heading XL */
   font-family: Inter, sans-serif;
-  font-size: 64px;
+  font-size: 400%;
   font-style: normal;
   font-weight: 600;
   line-height: 110%;
@@ -55,29 +55,218 @@ body {
 .better-paragragh {
   width: 50%;
   font-family: Inter, sans-serif;
-  font-size: 16px;
+  font-size: 100%;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
   color: #5e6e85;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .calculator-form {
-  background-color: aqua;
+  width: 40vw;
+  border-radius: 16px;
+  display: flex;
+  width: 564px;
+  padding: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+  position: absolute;
+  left: 50%;
+  top: 20%;
+}
+.form {
+  width: 100%;
+}
+.enter-your-details {
+  color: #253347;
+  font-family: Inter, sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+  margin-bottom: 2rem;
+}
+.radio-btns {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  margin-bottom: 32px;
+}
+.metric-block {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 1 0 0;
+}
+.imperial-block {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 1 0 0;
+}
+.radio-btn {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #d8e2e7;
+  width: 2rem;
+  cursor: pointer;
+}
+.radio-btn:hover {
+  border-color: #345ff6;
+}
+.unit-test {
+  color: #253347;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+}
+.text-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+.height-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1 0 0;
+}
+.height-text {
+  color: #5e6e85;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.height-input-text {
+  display: flex;
+  padding: 20px 24px;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  border-radius: 12px;
+  border: 1px solid #d8e2e7;
+  background-color: #fff;
+}
+.height-input-value {
+  color: #253347;
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  width: 80%;
+  opacity: 0.25;
+}
+.unit {
+  color: #345ff6;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  width: 20%;
+}
+.weight-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1 0 0;
+}
+.weight-text {
+  color: #5e6e85;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+}
+.weight-input-text {
+  display: flex;
+  padding: 20px 24px;
+  align-items: flex-start;
+  align-self: stretch;
+  border-radius: 12px;
+  border: 1px solid #d8e2e7;
+  background: #fff;
+}
+.weight-input-value {
+  color: #253347;
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  width: 80%;
+  opacity: 0.25;
+}
+.result-block {
+  padding: 32px;
+  border-radius: 16px 999px 999px 16px;
+  background: linear-gradient(90deg, #345ff6 0%, #587dff 100%);
+  margin: 32px 0;
+}
+.welcome-paragraph {
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
 }
 
+.welcome {
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.2px;
+}
+.right-arc {
+  margin-left: 75%;
+  margin-top: 1rem;
+}
+
+/*  */
+
+/*  */
 /* ADD MORE SELECTORS HERE */
 .section-2 {
   display: inline-flex;
-  margin-bottom: 6rem;
+  margin: 0 10%;
+  margin-top: -10%;
+  margin-bottom: 10%;
+  justify-content: space-between;
 }
 .man-image {
+  width: 100%;
 }
 .image-man-eating {
   width: 45%;
+  margin-right: 10%;
 }
 
 .section-2-block {
   width: 45%;
+  margin-top: 10%;
 }
 
 .BMI-result {
@@ -90,9 +279,11 @@ body {
 .result-paragragh {
   color: #5e6e85;
   font-family: Inter, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
+  width: 80%;
+  line-height: 150%;
 }
 .tips {
   display: flex;
@@ -100,6 +291,8 @@ body {
   margin: 0 5%;
   background: linear-gradient(315deg, #d6e6fe 0%, rgba(214, 252, 254, 0) 100%);
   border-radius: 35px;
+  height: 50vh;
+  align-items: center;
 }
 .healthy-eating {
   width: 30%;
@@ -122,7 +315,7 @@ body {
   width: 90%;
   color: #5e6e85;
   font-family: Inter, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
@@ -141,24 +334,21 @@ body {
 .limitations-paragraph {
   color: #5e6e85;
   font-family: Inter, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
 .peer-group {
-  /* display: flex;
-  width: 30%;
-  padding: 32px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px; */
   width: 30%;
   display: flex;
   padding: 32px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 32px;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
 }
 .peer-header {
   color: #253347;
@@ -172,4 +362,42 @@ body {
 }
 .peer-image {
   margin-right: 1rem;
+}
+.section-4 {
+  margin: 10%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.gender {
+  position: absolute;
+  left: 60%;
+  top: 0;
+}
+.muscle {
+  position: absolute;
+
+  left: 70%;
+  top: 37%;
+}
+.age {
+  position: inherit;
+  left: 35%;
+  top: -5%;
+}
+.race {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+}
+.pregnancy {
+  position: inherit;
+  left: 16%;
+  top: 12px;
+}
+.left-arc {
+  position: absolute;
+  left: 10%;
+  top: 40%;
 }

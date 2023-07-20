@@ -47,44 +47,44 @@
     <!-- add range -->.
     <!-- </div> -->
     <div class="calculator-form">
-      <form>
-        <h4 class="enter-your-details">Enter your details below</h4>
+      <div class="form">
+        <div class="enter-your-details">Enter your details below</div>
         <br />
-        <div class="type-of-metric">
-          <input
-            type="radio"
-            id="metric"
-            name="measurement"
-            value="metric"
-            checked
-          />
-          <label for="metric">Metric</label>
-          <input
-            type="radio"
-            id="imperial"
-            name="measurement"
-            value="imperial"
-          />
-          <label for="imperial">Imperial</label><br /><br />
+        <div class="radio-btns">
+          <div class="metric-block">
+            <div class="radio-btn"></div>
+            <div class="metric-text unit-test">Metric</div>
+          </div>
+          <div class="imperial-block">
+            <div class="radio-btn"></div>
+            <div class="imperial-text unit-test">Imperial</div>
+          </div>
         </div>
 
-        <div class="form-of-measure">
-          <label for="height">Height:</label><br />
-          <input type="text" id="height" name="height" value="0" /><br /><br />
-
-          <label for="weight">Weight:</label><br />
-          <input type="text" id="weight" name="weight" value="0" /><br /><br />
+        <div class="text-block">
+          <div class="height-block">
+            <div class="height-text quantity">Height</div>
+            <div class="height-input-text">
+              <span class="height-input-value">0</span>
+              <span class="cm unit">cm</span>
+            </div>
+          </div>
+          <div class="weight-block">
+            <div class="weight-text quantity">Weight</div>
+            <div class="weight-input-text">
+              <span class="weight-input-value">0</span>
+              <span class="kg unit">kg</span>
+            </div>
+          </div>
         </div>
 
-        <div class="display-result">
-          <h4 class="welcome-message">Welcome!</h4>
-          <p class="enter-input-paragraph">
+        <div class="result-block">
+          <div class="welcome">Welcome!</div>
+          <p class="welcome-paragraph">
             Enter your height and weight and you’ll see your BMI result here
           </p>
         </div>
-
-        <input type="submit" value="Submit" />
-      </form>
+      </div>
     </div>
 
     <div class="right-arc">
@@ -93,7 +93,11 @@
 
     <div class="section-2">
       <div class="image-man-eating">
-        <img class="man-image" src="./assets/images/image-man-eating.webp" alt="logo" />
+        <img
+          class="man-image"
+          src="./assets/images/image-man-eating.webp"
+          alt="logo"
+        />
       </div>
 
       <div class="section-2-block">
@@ -144,88 +148,94 @@
       </div>
     </div>
 
-    <div class="limitations">
-      <h3 class="limitations-header">Limitations of BMI</h3>
-      <p class="limitations-paragraph">
-        Although BMI is often a practical indicator of healthy weight, it is not
-        suited for every person. Specific groups should carefully consider their
-        BMI outcomes, and in certain cases, the measurement may not be
-        beneficial to use.
-      </p>
-    </div>
+    <div class="section-4">
+      <div class="limitations">
+        <h3 class="limitations-header">Limitations of BMI</h3>
+        <p class="limitations-paragraph">
+          Although BMI is often a practical indicator of healthy weight, it is
+          not suited for every person. Specific groups should carefully consider
+          their BMI outcomes, and in certain cases, the measurement may not be
+          beneficial to use.
+        </p>
+      </div>
 
-    <div class="gender peer-group">
-      <h4 class="gender-header peer-header">
-        <img
-          class="gender-image peer-image"
-          src="./assets/images/icon-gender.svg"
-          alt="gender-image"
-        />Gender
-      </h4>
-      <p class="gender-paragraph">
-        The development and body fat composition of girls and boys vary with
-        age. Consequently, a child's age and gender are considered when
-        evaluating their BMI.
-      </p>
-    </div>
+      <div class="gender peer-group">
+        <div class="gender-header peer-header">
+          <img
+            class="gender-image peer-image"
+            src="./assets/images/icon-gender.svg"
+            alt="gender-image"
+          />Gender
+        </div>
+        <p class="gender-paragraph">
+          The development and body fat composition of girls and boys vary with
+          age. Consequently, a child's age and gender are considered when
+          evaluating their BMI.
+        </p>
+      </div>
 
-    <div class="age peer-group">
-      <h4 class="age-header peer-header">
-        <img
-          class="age-image peer-image"
-          src="./assets/images/icon-age.svg"
-          alt="age-image"
-        />Age
-      </h4>
-      <p class="age-paragraph">
-        In aging individuals, increased body fat and muscle loss may cause BMI
-        to underestimate body fat content.
-      </p>
-    </div>
+      <div class="age peer-group">
+        <div class="age-header peer-header">
+          <img
+            class="age-image peer-image"
+            src="./assets/images/icon-age.svg"
+            alt="age-image"
+          />Age
+        </div>
+        <p class="age-paragraph">
+          In aging individuals, increased body fat and muscle loss may cause BMI
+          to underestimate body fat content.
+        </p>
+      </div>
 
-    <div class="muscle peer-group">
-      <h4 class="muscle-header peer-header">
-        <img
-          class="muscle-image peer-image"
-          src="./assets/images/icon-muscle.svg"
-          alt="muscle-image"
-        />
-        Muscle
-      </h4>
-      <p class="muscle-paragraph">
-        BMI may misclassify muscular individuals as overweight or obese, as it
-        doesn't differentiate muscle from fat.
-      </p>
-    </div>
+      <div class="muscle peer-group">
+        <div class="muscle-header peer-header">
+          <img
+            class="muscle-image peer-image"
+            src="./assets/images/icon-muscle.svg"
+            alt="muscle-image"
+          />
+          Muscle
+        </div>
+        <p class="muscle-paragraph">
+          BMI may misclassify muscular individuals as overweight or obese, as it
+          doesn't differentiate muscle from fat.
+        </p>
+      </div>
 
-    <div class="pregnancy peer-group">
-      <h4 class="pregnancy-header peer-header">
-        <img
-          class="pregnancy-image"
-          src="./assets/images/icon-pregnancy.svg"
-          alt="pregnancy-image peer-image"
-        />Pregnancy
-      </h4>
-      <p class="pregnancy-paragraph">
-        Expectant mothers experience weight gain due to their growing baby.
-        Maintaining a healthy pre-pregnancy BMI is advisable to minimise health
-        risks for both mother and child.
-      </p>
-    </div>
+      <div class="pregnancy peer-group">
+        <div class="pregnancy-header peer-header">
+          <img
+            class="pregnancy-image"
+            src="./assets/images/icon-pregnancy.svg"
+            alt="pregnancy-image peer-image"
+          />Pregnancy
+        </div>
+        <p class="pregnancy-paragraph">
+          Expectant mothers experience weight gain due to their growing baby.
+          Maintaining a healthy pre-pregnancy BMI is advisable to minimise
+          health risks for both mother and child.
+        </p>
+      </div>
 
-    <div class="race peer-group">
-      <h4 class="race-header peer-header">
-        <img
-          class="race-image peer-image"
-          src="./assets/images/icon-race.svg"
-          alt="race-image"
-        />Race
-      </h4>
-      <p class="race-paragragh">
-        Certain health concerns may affect individuals of some Black and Asian
-        origins at lower BMIs than others. To learn more, it is advised to
-        discuss this with your GP or practice nurse.
-      </p>
+      <div class="race peer-group">
+        <div class="race-header peer-header">
+          <img
+            class="race-image peer-image"
+            src="./assets/images/icon-race.svg"
+            alt="race-image"
+          />Race
+        </div>
+        <p class="race-paragragh">
+          Certain health concerns may affect individuals of some Black and Asian
+          origins at lower BMIs than others. To learn more, it is advised to
+          discuss this with your GP or practice nurse.
+        </p>
+      </div>
+
+      <div class="left-arc">
+        <img src="./assets/images/pattern-curved-line-right.svg" alt="left-arc" />
+      </div>
     </div>
   </body>
 </html>
