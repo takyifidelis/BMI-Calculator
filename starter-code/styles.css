@@ -172,6 +172,7 @@ body {
   letter-spacing: -1.2px;
   width: 80%;
   opacity: 0.25;
+  cursor: pointer;
 }
 .unit {
   color: #345ff6;
@@ -206,6 +207,7 @@ body {
   border-radius: 12px;
   border: 1px solid #d8e2e7;
   background: #fff;
+  cursor: pointer;
 }
 .weight-input-value {
   color: #253347;
@@ -384,7 +386,7 @@ body {
   top: 37%;
 }
 .age {
-  position: inherit;
+  position: relative;
   left: 35%;
   top: -5%;
 }
@@ -394,7 +396,7 @@ body {
   top: 70%;
 }
 .pregnancy {
-  position: inherit;
+  position: relative;
   left: 16%;
   top: 12px;
 }
@@ -404,11 +406,14 @@ body {
   top: 40%;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media (max-width: 1100px){
   /* CSS styles for tablets go here */
   body {
     text-align: center;
-    background-color: blue;
+    /* background-color: blue; */
+  }
+  .result-block{
+    text-align: start;
   }
   .section-1 {
     width: 100%;
@@ -417,14 +422,16 @@ body {
   .calculator-form {
     position: static;
     margin: 0 auto;
-    margin-top: -30%;
+    margin-top: -20%;
+    width: 90vw;
+    height: 40vh;
   }
   .section-1-position {
     margin: 0;
     padding: 0;
   }
   .bmi-header {
-    margin: 0 auto;
+    margin: 3% auto;
     font-size: 360%;
   }
   .section-1-block {
@@ -439,4 +446,150 @@ body {
     width: 90%;
     font-size: 96%;
   }
+  .right-arc{
+    display: none;
+  }
+  .section-2{
+    margin: 0;
+    margin-top: 10%;
+
+  }
+  .man-image{
+    width: 100%;
+    height: 100%;
+  }
+  .section-2-block{
+    margin-top: 0;
+    text-align: start;
+  }
+  .BMI-result {
+    font-size: 190%;
+}
+  .result-paragragh{
+    width: 90%;
+  }
+  .tips {
+    display: block;
+    text-align: start;
+    margin: 0;
+    border-radius: 0;
+    margin-top: 10%;
+    padding: 10% 0;
+    /* display: flex;
+    justify-content: space-evenly;
+    margin: 0 5%;
+    background: linear-gradient(315deg, #d6e6fe 0%, rgba(214, 252, 254, 0) 100%);
+    border-radius: 35px;
+    height: 50vh;
+    align-items: center; */
+  }
+  .tips-heading{
+    margin-bottom: 0;
+  }
+  .healthy-eating {
+    height: 30%;
+    width: initial;
+    padding: 0 2rem;
+  }
+  .regular-exercise {
+    height: 30%;
+    width: initial;
+    padding: 0 2rem;
+  }
+  .adequate-sleep {
+    height: 30%;
+    width: initial;
+    padding: 0 2rem;
+  }
+  .tip {
+    display: flex; /* Use flexbox for the parent container */
+    margin-bottom: 1rem;
+    align-items: center; /* Center the items vertically (optional, adjust as needed) */
+  }
+  
+  .tips-image {
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    margin-right: 20px; /* Add some space between the image and the content */
+  }
+  
+  /* Optional: If you want to adjust the alignment of the text content */
+  .tips-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .section-4{
+    display: block;
+    margin: 10% 5%;
+  }
+  .peer-group{
+    position: static;
+    width: 95%;
+    text-align: start;
+  }
+  .limitations {
+    width: 100%;
+}
+.groups{
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* row-gap: 1.5rem; */
+  margin-top: 10%;
+}
+.left-arc{
+  display: none;
+}
+.race{
+  margin: 0 50%;
+}
+@media (max-width: 700px){
+  .bmi-header{
+    font-size: 2.5rem;
+  }
+  .better-paragragh{
+    font-size: 17px;
+  }
+  .section-1 {
+    height: 100vh;
+}
+.calculator-form {
+  margin-top: -70%;
+  height: 60vh;
+}
+.section-2{
+  display: block;
+
+}
+.man-image{
+  width: 100vw;
+}
+.section-2-block{
+  width: 90vw;
+  margin: 0 5%;
+}
+.result-paragragh{
+  width: 90vw;
+}
+.tip{
+  display: grid;
+  margin-bottom: 3rem;
+  
+}
+.tips{
+  height: 110%;
+}
+.tips-paragraph{
+  width: 90vw;
+}
+.limitations-header{
+  font-size: 32px;
+}
+.groups{
+  display: block;
+}
+.race{
+  margin: 0;
+}
+
+}
 }
