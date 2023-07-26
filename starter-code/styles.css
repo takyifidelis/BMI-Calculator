@@ -99,6 +99,15 @@ body {
   align-self: stretch;
   margin-bottom: 32px;
 }
+.activated-btn{
+  border: 10px solid #d8e2e7;
+  background-color: #345FF6;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  width: 2rem;
+  cursor: pointer;
+}
 .metric-block {
   display: flex;
   align-items: center;
@@ -173,6 +182,7 @@ body {
   width: 80%;
   opacity: 0.25;
   cursor: pointer;
+  overflow: hidden;
 }
 .unit {
   color: #345ff6;
@@ -219,6 +229,7 @@ body {
   letter-spacing: -1.2px;
   width: 80%;
   opacity: 0.25;
+  overflow: hidden;
 }
 .result-block {
   padding: 32px;

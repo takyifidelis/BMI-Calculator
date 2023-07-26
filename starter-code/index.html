@@ -54,11 +54,11 @@
         <br />
         <div class="radio-btns">
           <div class="metric-block">
-            <div class="radio-btn"></div>
+            <div class="metric-radio-btn activated-btn"></div>
             <div class="metric-text unit-test">Metric</div>
           </div>
           <div class="imperial-block">
-            <div class="radio-btn"></div>
+            <div class="imperial-radio-btn radio-btn"></div>
             <div class="imperial-text unit-test">Imperial</div>
           </div>
         </div>
@@ -67,14 +67,14 @@
           <div class="height-block">
             <div class="height-text quantity">Height</div>
             <div class="height-input-text">
-              <span class="height-input-value">0</span>
+              <span class="height-input-value" contenteditable="true">0</span>
               <span class="cm unit">cm</span>
             </div>
           </div>
           <div class="weight-block">
             <div class="weight-text quantity">Weight</div>
             <div class="weight-input-text">
-              <span class="weight-input-value">0</span>
+              <span class="weight-input-value" contenteditable="true">0</span>
               <span class="kg unit">kg</span>
             </div>
           </div>
@@ -250,5 +250,7 @@
         />
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
