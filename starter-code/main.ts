@@ -5,6 +5,7 @@ $(document).ready(function () {
   const imperial = $(".imperial-radio-btn");
   const inputHeight = $(".height-input-value");
   const inputWeight = $(".weight-input-value");
+  const resultDisplay = $(".bmi-result-display");
 
   // VARIABLES
 
@@ -33,6 +34,7 @@ $(document).ready(function () {
     metric.removeClass("radio-btn");
     imperial.addClass("radio-btn");
     imperial.removeClass("activated-btn");
+    // resultDisplay.text("99.9");
   });
 
   imperial.click(function () {
@@ -40,62 +42,88 @@ $(document).ready(function () {
     imperial.removeClass("radio-btn");
     metric.addClass("radio-btn");
     metric.removeClass("activated-btn");
+    updateBMI();
+    
   });
 
   //
-  // InputHeight Text Input
-  inputHeight.on("input", function () {
-    let content = $(this).text();
-    inputHeight.css("opacity","1");
 
-    // Truncate content to the maximum allowed characters
-    if (content.length > 8) {
-      content = content.slice(0, 8);
-      $(this).text(content);
-    }
-  });
+  // InputHeight Text Input
+  // inputHeight.on("input", function () {
+  //   let content = $(this).text();
+  //   inputHeight.css("opacity", "1");
+
+  //   // Truncate content to the maximum allowed characters
+  //   if (content.length > 8) {
+  //     content = content.slice(0, 8);
+  //     $(this).text(content);
+  //   }
+  // });
 
   // Click event for inputHeight
-  inputHeight.click(function () {
-    if ($(this).text().trim() === "") {
-      $(this).text("0");
-    } else {
-      $(this).text("");
-    }
-  });
+  // inputHeight.click(function () {
+  //   if ($(this).text().trim() === "") {
+  //     $(this).text("0");
+  //   } else {
+  //     $(this).text("");
+  //   }
+  // });
 
-  // Keypress event for inputHeight
+  // // Keypress event for inputHeight
   inputHeight.on("keypress", function (event) {
     numericInputFunction(event);
   });
 
- 
-  // InputWeight Text Input
-  inputWeight.on("input", function () {
-    let content = $(this).text();
-    inputWeight.css("opacity","1");
+  // // InputWeight Text Input
+  // inputWeight.on("input", function () {
+  //   let content = $(this).text();
+  //   inputWeight.css("opacity", "1");
 
-    // Truncate content to the maximum allowed characters
-    if (content.length > 8) {
-      content = content.slice(0, 8);
-      $(this).text(content);
-    }
-  });
+  //   // Truncate content to the maximum allowed characters
+  //   if (content.length > 8) {
+  //     content = content.slice(0, 8);
+  //     $(this).text(content);
+  //   }
+  // });
 
-  // Click event for inputWeight
-  inputWeight.click(function () {
-    if ($(this).text().trim() === "") {
-      $(this).text("0");
-    } else {
-      $(this).text("");
-    }
-  });
+  // // Click event for inputWeight
+  // inputWeight.click(function () {
+  //   if ($(this).text().trim() === "") {
+  //     $(this).text("0");
+  //   } else {
+  //     $(this).text("");
+  //   }
+  // });
 
   // Keypress event for inputWeight
   inputWeight.on("keypress", function (event) {
     numericInputFunction(event);
   });
-  //
+
+  // Calculate BMI
+ const  updateBMI  = () => {
+  //CALCULATING THE BMI in Kg and cm
+  
+  const heightMetric: number = parseFloat(inputHeight.text());
+  const weightMetric: number = parseFloat(inputWeight.text());
+
+  if (isNaN(heightMetric) || isNaN(weightMetric)) {
+    resultDisplay.text('')
+    return;
+  }
+
+  // Convert height to meters (BMI formula requires height in meters)
+  const heightInMeters = heightMetric / 100;
+
+  // Calculate BMI using the formula: BMI = weight (kg) / (height (m) * height (m))
+  const bmi = weightMetric / (heightInMeters * heightInMeters);
+
+  // Display the result
+
+  resultDisplay.text(`${bmi.toFixed(2)}`);
+  }
+
+
 
 
 });

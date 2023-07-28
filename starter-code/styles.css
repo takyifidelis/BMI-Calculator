@@ -66,7 +66,7 @@ body {
 }
 .calculator-form {
   width: 40vw;
-  height: 75vh;
+  height: fit-content;
   border-radius: 16px;
   display: flex;
   padding: 32px;
@@ -99,9 +99,9 @@ body {
   align-self: stretch;
   margin-bottom: 32px;
 }
-.activated-btn{
+.activated-btn {
   border: 10px solid #d8e2e7;
-  background-color: #345FF6;
+  background-color: #345ff6;
   width: 31px;
   height: 31px;
   border-radius: 50%;
@@ -153,6 +153,12 @@ body {
   gap: 8px;
   flex: 1 0 0;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-moz-number-spinners {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
 .height-text {
   color: #5e6e85;
   font-family: Inter, sans-serif;
@@ -181,6 +187,7 @@ body {
   letter-spacing: -1.2px;
   width: 80%;
   opacity: 0.25;
+  text-align: left;
   cursor: pointer;
   overflow: hidden;
 }
@@ -229,6 +236,7 @@ body {
   letter-spacing: -1.2px;
   width: 80%;
   opacity: 0.25;
+  text-align: left;
   overflow: hidden;
 }
 .result-block {
@@ -236,6 +244,7 @@ body {
   border-radius: 16px 999px 999px 16px;
   background: linear-gradient(90deg, #345ff6 0%, #587dff 100%);
   margin: 32px 0;
+  display: none;
 }
 .welcome-paragraph {
   color: #fff;
@@ -254,6 +263,54 @@ body {
   font-weight: 600;
   line-height: normal;
   letter-spacing: -1.2px;
+}
+.result-display-block {
+  border-radius: 16px 999px 999px 16px;
+  background: linear-gradient(90deg, #345ff6 0%, #587dff 100%);
+  width: 100%;
+  /* height: 120px; */
+  padding: 32px;
+  margin-top: 32px;
+}
+.result-main-block {
+  /* float: left; */
+  display: flex;
+  gap: 32px;
+}
+.result-paragraph-display {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: left;
+}
+.weight-range {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+.your-result-is {
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  text-align: left;
+}
+.bmi-result-display {
+  color: #fff;
+  font-family: Inter;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -3.2px;
 }
 .right-arc {
   margin-left: 75%;
@@ -417,13 +474,13 @@ body {
   top: 40%;
 }
 
-@media (max-width: 1100px){
+@media (max-width: 1100px) {
   /* CSS styles for tablets go here */
   body {
     text-align: center;
     /* background-color: blue; */
   }
-  .result-block{
+  .result-block {
     text-align: start;
   }
   .section-1 {
@@ -435,7 +492,7 @@ body {
     margin: 0 auto;
     margin-top: -20%;
     width: 90vw;
-    height: 40vh;
+    height: fit-content;
   }
   .section-1-position {
     margin: 0;
@@ -457,26 +514,28 @@ body {
     width: 90%;
     font-size: 96%;
   }
-  .right-arc{
+  .right-arc {
     display: none;
   }
-  .section-2{
+  .section-2 {
     margin: 0;
     margin-top: 10%;
-
   }
-  .man-image{
+  .man-image {
     width: 100%;
     height: 100%;
   }
-  .section-2-block{
+  .section-2-block {
     margin-top: 0;
     text-align: start;
   }
+  .result-main-block {
+    gap: 40%;
+  }
   .BMI-result {
     font-size: 190%;
-}
-  .result-paragragh{
+  }
+  .result-paragragh {
     width: 90%;
   }
   .tips {
@@ -486,6 +545,7 @@ body {
     border-radius: 0;
     margin-top: 10%;
     padding: 10% 0;
+    height: fit-content;
     /* display: flex;
     justify-content: space-evenly;
     margin: 0 5%;
@@ -494,7 +554,7 @@ body {
     height: 50vh;
     align-items: center; */
   }
-  .tips-heading{
+  .tips-heading {
     margin-bottom: 0;
   }
   .healthy-eating {
@@ -517,90 +577,96 @@ body {
     margin-bottom: 1rem;
     align-items: center; /* Center the items vertically (optional, adjust as needed) */
   }
-  
+
   .tips-image {
     flex-shrink: 0; /* Prevent the image from shrinking */
     margin-right: 20px; /* Add some space between the image and the content */
   }
-  
+
   /* Optional: If you want to adjust the alignment of the text content */
   .tips-content {
     display: flex;
     flex-direction: column;
   }
-  .section-4{
+  .section-4 {
     display: block;
     margin: 10% 5%;
   }
-  .peer-group{
+  .peer-group {
     position: static;
     width: 95%;
     text-align: start;
   }
   .limitations {
     width: 100%;
-}
-.groups{
-  grid-column: 2 / 3;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* row-gap: 1.5rem; */
-  margin-top: 10%;
-}
-.left-arc{
-  display: none;
-}
-.race{
-  margin: 0 50%;
-}
-@media (max-width: 700px){
-  .bmi-header{
-    font-size: 2.5rem;
   }
-  .better-paragragh{
-    font-size: 17px;
+  .groups {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* row-gap: 1.5rem; */
+    margin-top: 10%;
   }
-  .section-1 {
-    height: 100vh;
-}
-.calculator-form {
-  margin-top: -70%;
-  height: 60vh;
-}
-.section-2{
-  display: block;
-
-}
-.man-image{
-  width: 100vw;
-}
-.section-2-block{
-  width: 90vw;
-  margin: 0 5%;
-}
-.result-paragragh{
-  width: 90vw;
-}
-.tip{
-  display: grid;
-  margin-bottom: 3rem;
-  
-}
-.tips{
-  height: 110%;
-}
-.tips-paragraph{
-  width: 90vw;
-}
-.limitations-header{
-  font-size: 32px;
-}
-.groups{
-  display: block;
-}
-.race{
-  margin: 0;
-}
-
-}
+  .left-arc {
+    display: none;
+  }
+  .race {
+    margin: 0 50%;
+  }
+  @media (max-width: 700px) {
+    .bmi-header {
+      font-size: 2.5rem;
+    }
+    .better-paragragh {
+      font-size: 17px;
+    }
+    .section-1 {
+      height: 100vh;
+    }
+    .calculator-form {
+      margin-top: -70%;
+      height: fit-content;
+    }
+    .result-display-block {
+      border-radius: 16px;
+    }
+    .result-main-block {
+      display: block;
+    }
+    .section-2 {
+      display: block;
+    }
+    .your-result-is-block {
+      text-align: left;
+    }
+    .man-image {
+      width: 100vw;
+    }
+    .section-2-block {
+      width: 90vw;
+      margin: 0 5%;
+    }
+    .result-paragragh {
+      width: 90vw;
+    }
+    .tip {
+      display: grid;
+      margin-bottom: 3rem;
+    }
+    .tips {
+      height: fit-content;
+    }
+    .tips-paragraph {
+      width: 90vw;
+    }
+    .limitations-header {
+      font-size: 32px;
+    }
+    .groups {
+      display: block;
+    }
+    .race {
+      margin: 0;
+    }
+  }
 }
