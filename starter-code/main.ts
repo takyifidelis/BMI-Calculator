@@ -6,6 +6,11 @@ $(document).ready(function () {
   const inputHeight = $(".height-input-value");
   const inputWeight = $(".weight-input-value");
   const resultDisplay = $(".bmi-result-display");
+  const weightClassification = $(".weight-classification");
+  const weightRange = $(".weight-range");
+  const maximumIdealWeight = $(".maximum-ideal-weight");
+  const minimumIdealWeight = $(".minimum-ideal-weight");
+  const idealWeightStatement = $(".your-ideal-weight-is");
 
   // VARIABLES
 
@@ -43,7 +48,6 @@ $(document).ready(function () {
     metric.addClass("radio-btn");
     metric.removeClass("activated-btn");
     updateBMI();
-    
   });
 
   //
@@ -101,29 +105,79 @@ $(document).ready(function () {
   });
 
   // Calculate BMI
- const  updateBMI  = () => {
-  //CALCULATING THE BMI in Kg and cm
-  
-  const heightMetric: number = parseFloat(inputHeight.text());
-  const weightMetric: number = parseFloat(inputWeight.text());
 
-  if (isNaN(heightMetric) || isNaN(weightMetric)) {
-    resultDisplay.text('')
-    return;
-  }
+  // const heightMetric: number = parseFloat(inputHeight.text());
+  // const weightMetric: number = parseFloat(inputWeight.text());
+  // const heightInMeters = heightMetric / 100;
+  const updateBMI = () => {
+    //CALCULATING THE BMI in kg and cm
 
-  // Convert height to meters (BMI formula requires height in meters)
-  const heightInMeters = heightMetric / 100;
+    const heightMetric: number = parseFloat(inputHeight.text());
+    const weightMetric: number = parseFloat(inputWeight.text());
 
-  // Calculate BMI using the formula: BMI = weight (kg) / (height (m) * height (m))
-  const bmi = weightMetric / (heightInMeters * heightInMeters);
+    if (isNaN(heightMetric) || isNaN(weightMetric)) {
+      resultDisplay.text("");
+      return;
+    }
 
-  // Display the result
+    // Convert height to meters (BMI formula requires height in meters)
+    const heightInMeters = heightMetric / 100;
 
-  resultDisplay.text(`${bmi.toFixed(2)}`);
-  }
+    // Calculate BMI using the formula: BMI = weight (kg) / (height (m) * height (m))
+    const bmi = weightMetric / (heightInMeters * heightInMeters);
 
+    // Display the result
 
+    resultDisplay.text(`${bmi.toFixed(2)}`);
 
+    //Underweight: BMI less than 18.5
+    // Healthy weight: BMI 18.5 to 24.9
+    // Overweight: BMI 25 to 29.9
+    // Obese: BMI 30 or greater
 
+    let maximumWeight: number;
+    let minimumWeight: number;
+    if (bmi < 18.5) {
+      minimumWeight = 18.5 * Math.pow(heightInMeters, 2);
+      weightClassification.text("underweight");
+      idealWeightStatement.text(`Your ideal weight is less than ${minimumWeight.toFixed(2)}`)
+    } else if (bmi >= 18.5 && bmi < 25) {
+      minimumWeight = 18.5 * Math.pow(heightInMeters, 2);
+      maximumWeight = 24.9 * Math.pow(heightInMeters, 2);
+      weightClassification.text("a healthy weight");
+      minimumIdealWeight.text(`${minimumWeight.toFixed(2)}`);
+      maximumIdealWeight.text(`${maximumWeight.toFixed(2)}`);
+    } else if (bmi >= 25 && bmi <= 29.9) {
+      minimumWeight = 25 * Math.pow(heightInMeters, 2);
+      maximumWeight = 29.9 * Math.pow(heightInMeters, 2);
+      weightClassification.text("overweight");
+      minimumIdealWeight.text(`${minimumWeight.toFixed(2)}`);
+      maximumIdealWeight.text(`${maximumWeight.toFixed(2)}`);
+    } else if (bmi >= 30) {
+      weightClassification.text("obese");
+      maximumWeight = 30 * Math.pow(heightInMeters, 2);
+      idealWeightStatement.text(`Your ideal weight is greater than ${maximumWeight.toFixed(2)}`)
+      
+
+    }
+  };
+
+  const updateWeightRange = (event: number) => {};
+  const updateWeightClassification = (event: number) => {
+    // let maximumWeight: number;
+    // let minimumWeight: number;
+    // if (event < 18.5) {
+    //   weightClassification.text("underweight");
+    // } else if (event >= 18.5 || event < 25) {
+    //   // minimumWeight = 18.5 * Math.pow(heightInMeters, 2);
+    //   // maximumWeight = 29.9 * Math.pow(heightInMeters, 2);
+    //   weightClassification.text("a healthy weight");
+    //   // minimumIdealWeight.text(minimumWeight);
+    //   // maximumIdealWeight.text(maximumWeight);
+    // } else if (event >= 25 || event < 29.9) {
+    //   weightClassification.text("overweight");
+    // } else if (event >= 30) {
+    //   weightClassification.text("obese");
+    // }
+  };
 });
