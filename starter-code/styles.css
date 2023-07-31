@@ -108,6 +108,21 @@ body {
   width: 2rem;
   cursor: pointer;
 }
+.use-metric{
+  /* display: none; */
+}
+
+.use-imperial{
+  display: none;
+}
+.imperial-alignment{
+  display: flex;
+ 
+}
+
+.hidden{
+  visibility: hidden;
+}
 .metric-block {
   display: flex;
   align-items: center;
@@ -129,9 +144,13 @@ body {
   width: 2rem;
   cursor: pointer;
 }
-.radio-btn:hover {
+.radio-btn:hover,
+.weight-input-text:hover,
+.height-input-text:hover {
   border-color: #345ff6;
 }
+
+
 .unit-test {
   color: #253347;
   font-family: Inter, sans-serif;
@@ -145,6 +164,7 @@ body {
   align-items: flex-start;
   gap: 24px;
   align-self: stretch;
+  margin-bottom: 1rem;
 }
 .height-block {
   display: flex;
@@ -153,12 +173,7 @@ body {
   gap: 8px;
   flex: 1 0 0;
 }
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-moz-number-spinners {
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
-}
+
 .height-text {
   color: #5e6e85;
   font-family: Inter, sans-serif;
