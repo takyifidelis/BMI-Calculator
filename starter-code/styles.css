@@ -110,6 +110,7 @@ body {
 }
 .use-metric{
   /* display: none; */
+  display: contents;
 }
 
 .use-imperial{
@@ -174,6 +175,7 @@ body {
   flex: 1 0 0;
 }
 
+
 .height-text {
   color: #5e6e85;
   font-family: Inter, sans-serif;
@@ -204,8 +206,21 @@ body {
   opacity: 0.25;
   text-align: left;
   cursor: pointer;
-  overflow: hidden;
+  border-style: none;
+ 
 }
+/* For WebKit-based browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Mozilla Firefox */
+input[type="number"]::-moz-number-spin-box {
+  -moz-appearance: textfield;
+}
+
 .unit {
   color: #345ff6;
   font-family: Inter;
@@ -238,6 +253,7 @@ body {
   align-self: stretch;
   border-radius: 12px;
   border: 1px solid #d8e2e7;
+  gap: 24px;
   background: #fff;
   cursor: pointer;
 }
@@ -250,16 +266,18 @@ body {
   line-height: normal;
   letter-spacing: -1.2px;
   width: 80%;
+  max-width: 100%;
+  border-style: none;
   opacity: 0.25;
   text-align: left;
-  overflow: hidden;
+
 }
 .result-block {
   padding: 32px;
   border-radius: 16px 999px 999px 16px;
   background: linear-gradient(90deg, #345ff6 0%, #587dff 100%);
   margin: 32px 0;
-  display: none;
+  /* display: none; */
 }
 .welcome-paragraph {
   color: #fff;
@@ -286,6 +304,7 @@ body {
   /* height: 120px; */
   padding: 32px;
   margin-top: 32px;
+  display: none;
 }
 .result-main-block {
   /* float: left; */
@@ -312,7 +331,7 @@ body {
 .your-result-is {
   color: #fff;
   font-family: Inter, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;

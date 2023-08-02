@@ -145,85 +145,22 @@ $(document).ready(function () {
     let pounds:number = parseFloat(inputWeightInIbs.val() as string);
 
     if (
-      (isNaN(feet) &&
-      isNaN(inches)) ||(
-      isNaN(stones) &&
-      isNaN(pounds) )
-      
+      isNaN(feet) ||
+      isNaN(inches) ||
+      isNaN(stones) ||
+      isNaN(pounds) 
+      // ||
+      // (inputHeightInFt.text() === "0" && inputHeightInIn.text() === "0") ||
+      // (inputWeightInSt.text() === "0" && inputWeightInIbs.text() === "0")
     ) {
   
       welcomeBlock.show();
       resultBlock.hide();
-      
 
       return;
     }
 
-
-    if((!isNaN(feet) &&
-    isNaN(inches)) && (
-    isNaN(stones) &&
-    !isNaN(pounds) )){
-      inches = 0;
-      stones = 0;
-      
-    }else if((isNaN(feet) &&
-    !isNaN(inches)) && (
-    !isNaN(stones) &&
-    isNaN(pounds) )){
-      feet = 0;
-      pounds = 0; 
-
-      
-    }
-    
-    else if((!isNaN(feet) &&
-    isNaN(inches)) && (
-    !isNaN(stones) &&
-    isNaN(pounds) )){
-      inches = 0;
-      pounds = 0;
-      
-    }
-    else if((isNaN(feet) &&
-    !isNaN(inches)) && (
-    isNaN(stones) &&
-    !isNaN(pounds) )){
-      feet = 0;
-      stones = 0;
-      
-    }else if((!isNaN(feet) &&
-    !isNaN(inches)) && (
-    !isNaN(stones) &&
-    isNaN(pounds) )){
-      pounds = 0;
-      
-    }else if((!isNaN(feet) &&
-    !isNaN(inches)) && (
-    isNaN(stones) &&
-    !isNaN(pounds) )){
-      stones = 0;
-      
-    }else if((!isNaN(feet) &&
-    isNaN(inches)) && (
-    !isNaN(stones) &&
-    !isNaN(pounds) )){
-      inches = 0;
-      
-    }else if((isNaN(feet) &&
-    !isNaN(inches)) && (
-    !isNaN(stones) &&
-    !isNaN(pounds) )){
-      feet = 0;
-      
-    }
-
-
-        
-    console.log(`Feet is ${feet} /Inches is ${inches}  /Stones is ${stones}/Pounds is ${pounds}`)
-
-
-    
+    console.log("hello")
     const heightInInches = feet * 12 + inches;
     const weightInPounds = stones * 14 + pounds;
     const heightInMeters = feetAndInchesToMeters(feet, inches);

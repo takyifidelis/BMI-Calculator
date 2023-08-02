@@ -19,28 +19,12 @@ $(document).ready(function () {
     var minimumIdealWeight = $(".minimum-ideal-weight");
     var idealWeightStatement = $(".your-ideal-weight-is");
     var clickBtn = $(".logo");
+    var welcomeBlock = $(".result-block");
+    var resultBlock = $(".result-display-block");
     // VARIABLES
     clickBtn.click(function () {
         BMIimperial();
-        // resultDisplay.text("99.9");
     });
-    function numericInputFunction(event) {
-        // Get the character code of the pressed key
-        var charCode = event.which || event.keyCode;
-        // Allow only numeric keys (48-57), backspace (8), and delete (46)
-        if ((charCode >= 48 && charCode <= 57) || // 0-9
-            charCode === 8 || // Backspace
-            charCode === 46 // Delete
-        ) {
-            // Allow the key to be entered
-            return true;
-        }
-        else {
-            // Block the key from being entered
-            event.preventDefault();
-            return false;
-        }
-    }
     // Toggle between the Radio Buttons
     metric.click(function () {
         metric.addClass("activated-btn");
@@ -49,7 +33,8 @@ $(document).ready(function () {
         imperial.removeClass("activated-btn");
         useImperial.hide();
         useMetric.show();
-        // resultDisplay.text("99.9");
+        welcomeBlock.show();
+        resultBlock.hide();
     });
     imperial.click(function () {
         imperial.addClass("activated-btn");
@@ -58,68 +43,47 @@ $(document).ready(function () {
         metric.removeClass("activated-btn");
         useImperial.show();
         useMetric.hide();
-        updateBMI();
+        welcomeBlock.show();
+        resultBlock.hide();
     });
-    //
-    // InputHeight Text Input
-    // inputHeight.on("input", function () {
-    //   let content = $(this).text();
-    //   inputHeight.css("opacity", "1");
-    //   // Truncate content to the maximum allowed characters
-    //   if (content.length > 8) {
-    //     content = content.slice(0, 8);
-    //     $(this).text(content);
-    //   }
-    // });
-    // Click event for inputHeight
-    // inputHeight.click(function () {
-    //   if ($(this).text().trim() === "") {
-    //     $(this).text("0");
-    //   } else {
-    //     $(this).text("");
-    //   }
-    // });
-    // // Keypress event for inputHeight
-    inputHeight.on("keypress", function (event) {
-        numericInputFunction(event);
-    });
+    // Event handlers with specified type for the 'event' parameter
+    inputWeight.on("keyup", handleKeyUp);
+    inputHeight.on("keyup", handleKeyUp);
+    inputHeightInFt.on("keyup", handleKeyUpImeprial);
+    inputHeightInIn.on("keyup", handleKeyUpImeprial);
+    inputWeightInSt.on("keyup", handleKeyUpImeprial);
+    inputWeightInIbs.on("keyup", handleKeyUpImeprial);
+    // The handleKeyUp function with specified type for the 'event' parameter
+    function handleKeyUp(event) {
+        if (event.which === 13) {
+            updateBMI();
+        }
+    }
+    function handleKeyUpImeprial(event) {
+        if (event.which === 13) {
+            BMIimperial();
+        }
+    }
     // // InputWeight Text Input
     // inputWeight.on("input", function () {
     //   let content = $(this).text();
     //   inputWeight.css("opacity", "1");
-    //   // Truncate content to the maximum allowed characters
-    //   if (content.length > 8) {
-    //     content = content.slice(0, 8);
-    //     $(this).text(content);
-    //   }
-    // });
-    // // Click event for inputWeight
-    // inputWeight.click(function () {
-    //   if ($(this).text().trim() === "") {
-    //     $(this).text("0");
-    //   } else {
-    //     $(this).text("");
-    //   }
-    // });
-    // Keypress event for inputWeight
-    inputWeight.on("keypress", function (event) {
-        numericInputFunction(event);
-    });
     // Calculate BMI for metric
     var updateBMI = function () {
-        //CALCULATING THE BMI in kg and cm
-        var heightMetric = parseFloat(inputHeight.text());
-        var weightMetric = parseFloat(inputWeight.text());
-        if (isNaN(heightMetric) || isNaN(weightMetric)) {
-            resultDisplay.text("");
+        //Calculate THE BMI in kg and cm
+        var heightInCm = parseFloat(inputHeight.val());
+        var weightInKg = parseFloat(inputWeight.val());
+        if (isNaN(heightInCm) || isNaN(weightInKg)) {
+            welcomeBlock.show();
+            resultBlock.hide();
             return;
         }
         // Convert height to meters (BMI formula requires height in meters)
-        var heightInMeters = heightMetric / 100;
+        var heightInMeters = heightInCm / 100;
         // Calculate BMI using the formula: BMI = weight (kg) / (height (m) * height (m))
-        var bmi = weightMetric / (heightInMeters * heightInMeters);
+        var bmi = weightInKg / (heightInMeters * heightInMeters);
         // Display the result
-        resultDisplay.text("".concat(bmi.toFixed(2)));
+        resultDisplay.text("".concat(bmi.toFixed(1)));
         //Underweight: BMI less than 18.5
         // Healthy weight: BMI 18.5 to 24.9
         // Overweight: BMI 25 to 29.9
@@ -150,13 +114,67 @@ $(document).ready(function () {
             maximumWeight = 30 * Math.pow(heightInMeters, 2);
             idealWeightStatement.text("Your ideal weight is greater than ".concat(maximumWeight.toFixed(2)));
         }
+        welcomeBlock.hide();
+        resultBlock.show();
     };
     // Calculate BMI for Imperial
     function BMIimperial() {
-        var feet = parseFloat(inputHeightInFt.text());
-        var inches = parseFloat(inputHeightInIn.text());
-        var stones = parseFloat(inputWeightInSt.text());
-        var pounds = parseFloat(inputWeightInIbs.text());
+        var feet = parseFloat(inputHeightInFt.val());
+        var inches = parseFloat(inputHeightInIn.val());
+        var stones = parseFloat(inputWeightInSt.val());
+        var pounds = parseFloat(inputWeightInIbs.val());
+        if ((isNaN(feet) &&
+            isNaN(inches)) || (isNaN(stones) &&
+            isNaN(pounds))) {
+            welcomeBlock.show();
+            resultBlock.hide();
+            return;
+        }
+        if ((!isNaN(feet) &&
+            isNaN(inches)) && (isNaN(stones) &&
+            !isNaN(pounds))) {
+            inches = 0;
+            stones = 0;
+        }
+        else if ((isNaN(feet) &&
+            !isNaN(inches)) && (!isNaN(stones) &&
+            isNaN(pounds))) {
+            feet = 0;
+            pounds = 0;
+        }
+        else if ((!isNaN(feet) &&
+            isNaN(inches)) && (!isNaN(stones) &&
+            isNaN(pounds))) {
+            inches = 0;
+            pounds = 0;
+        }
+        else if ((isNaN(feet) &&
+            !isNaN(inches)) && (isNaN(stones) &&
+            !isNaN(pounds))) {
+            feet = 0;
+            stones = 0;
+        }
+        else if ((!isNaN(feet) &&
+            !isNaN(inches)) && (!isNaN(stones) &&
+            isNaN(pounds))) {
+            pounds = 0;
+        }
+        else if ((!isNaN(feet) &&
+            !isNaN(inches)) && (isNaN(stones) &&
+            !isNaN(pounds))) {
+            stones = 0;
+        }
+        else if ((!isNaN(feet) &&
+            isNaN(inches)) && (!isNaN(stones) &&
+            !isNaN(pounds))) {
+            inches = 0;
+        }
+        else if ((isNaN(feet) &&
+            !isNaN(inches)) && (!isNaN(stones) &&
+            !isNaN(pounds))) {
+            feet = 0;
+        }
+        console.log("Feet is ".concat(feet, " /Inches is ").concat(inches, "  /Stones is ").concat(stones, "/Pounds is ").concat(pounds));
         var heightInInches = feet * 12 + inches;
         var weightInPounds = stones * 14 + pounds;
         var heightInMeters = feetAndInchesToMeters(feet, inches);
@@ -183,6 +201,8 @@ $(document).ready(function () {
         }
         weightClassification.text(weightClassificationMsg);
         weightRange.text(weightRangeMsg);
+        welcomeBlock.hide();
+        resultBlock.show();
     }
     function getWeightInStonesAndPounds(bmiValue, heightInMeters) {
         var weightInKg = bmiValue * Math.pow(heightInMeters, 2);

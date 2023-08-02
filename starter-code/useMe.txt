@@ -27,6 +27,25 @@ $(document).ready(function () {
     BMIimperial();
   });
 
+  function numericInputFunction(event: any): boolean {
+    // Get the character code of the pressed key
+    const charCode = event.which || event.keyCode;
+
+    // Allow only numeric keys (48-57), backspace (8), and delete (46)
+    if (
+      (charCode >= 48 && charCode <= 57) || // 0-9
+      charCode === 8 || // Backspace
+      charCode === 46 // Delete
+    ) {
+      // Allow the key to be entered
+      return true;
+    } else {
+      // Block the key from being entered
+      event.preventDefault();
+      return false;
+    }
+  }
+
   // Toggle between the Radio Buttons
   metric.click(function () {
     metric.addClass("activated-btn");
@@ -70,20 +89,89 @@ $(document).ready(function () {
     }
   }
 
+  // InputHeight Text Input
+  // inputHeight.on("input", function () {
+  //   let content = $(this).text();
+  //   inputHeight.css("opacity", "1");
+
+  //   // Truncate content to the maximum allowed characters
+  //   if (content.length > 8) {
+  //     content = content.slice(0, 8);
+  //     $(this).text(content);
+  //   }
+  // });
+
+  // Click event for inputHeight
+  inputHeight.click(function () {
+    if ($(this).text().trim() !== "") {
+      $(this).text("");
+    } 
+  });
+ 
+
+
   // // InputWeight Text Input
   // inputWeight.on("input", function () {
   //   let content = $(this).text();
   //   inputWeight.css("opacity", "1");
 
+  //   // Truncate content to the maximum allowed characters
+  //   if (content.length > 8) {
+  //     content = content.slice(0, 8);
+  //     $(this).text(content);
+  //   }
+  // });
+
+  function lengthOfInput() {}
+
+  // // Click event for inputWeight
+  // inputWeight.click(function () {
+  //   if ($(this).text().trim() === "") {
+  //     $(this).text("0");
+  //   } else {
+  //     $(this).text("");
+  //   }
+  // });
+
+  // // Keypress event to allow only Positive integers
+  inputHeight.on("keypress", function (event) {
+    numericInputFunction(event);
+  });
+  inputWeight.on("keypress", function (event) {
+    numericInputFunction(event);
+  });
+  inputHeightInFt.on("keypress", function (event) {
+    numericInputFunction(event);
+  });
+  inputHeightInIn.on("keypress", function (event) {
+    numericInputFunction(event);
+  });
+  inputWeightInSt.on("keypress", function (event) {
+    numericInputFunction(event);
+  });
+  inputWeightInIbs.on("keypress", function (event) {
+    numericInputFunction(event);
+  });
+
+  // Keypress event for inputWeight
+  inputWeight.on("keypress", function (event) {
+    numericInputFunction(event);
+  });
+
   // Calculate BMI for metric
 
   const updateBMI = () => {
-    //Calculate THE BMI in kg and cm
+    //CALCULATING THE BMI in kg and cm
 
-    const heightInCm: number = parseFloat(inputHeight.val() as string);
-    const weightInKg: number = parseFloat(inputWeight.val() as string);
+    const heightMetric: number = parseFloat(inputHeight.text());
+    const weightMetric: number = parseFloat(inputWeight.text());
 
-    if (isNaN(heightInCm) || isNaN(weightInKg)) {
+    if (
+      isNaN(heightMetric) ||
+      isNaN(weightMetric) ||
+      inputHeight.text() === "0" ||
+      inputWeight.text() === "0"
+    ) {
       welcomeBlock.show();
       resultBlock.hide();
 
@@ -91,10 +179,10 @@ $(document).ready(function () {
     }
 
     // Convert height to meters (BMI formula requires height in meters)
-    const heightInMeters = heightInCm / 100;
+    const heightInMeters = heightMetric / 100;
 
     // Calculate BMI using the formula: BMI = weight (kg) / (height (m) * height (m))
-    const bmi = weightInKg / (heightInMeters * heightInMeters);
+    const bmi = weightMetric / (heightInMeters * heightInMeters);
 
     // Display the result
 
@@ -138,92 +226,25 @@ $(document).ready(function () {
 
   // Calculate BMI for Imperial
   function BMIimperial() {
-   
-    let feet: number = parseFloat(inputHeightInFt.val() as string);
-    let inches: number = parseFloat(inputHeightInIn.val() as string);
-    let stones:number = parseFloat(inputWeightInSt.val() as string);
-    let pounds:number = parseFloat(inputWeightInIbs.val() as string);
+    let feet = parseFloat(inputHeightInFt.text());
+    let inches = parseFloat(inputHeightInIn.text());
+    let stones = parseFloat(inputWeightInSt.text());
+    let pounds = parseFloat(inputWeightInIbs.text());
 
     if (
-      (isNaN(feet) &&
-      isNaN(inches)) ||(
-      isNaN(stones) &&
-      isNaN(pounds) )
-      
+      isNaN(feet) ||
+      isNaN(inches) ||
+      isNaN(stones) ||
+      isNaN(pounds) ||
+      (inputHeightInFt.text() === "0" && inputHeightInIn.text() === "0") ||
+      (inputWeightInSt.text() === "0" && inputWeightInIbs.text() === "0")
     ) {
-  
       welcomeBlock.show();
       resultBlock.hide();
-      
 
       return;
     }
 
-
-    if((!isNaN(feet) &&
-    isNaN(inches)) && (
-    isNaN(stones) &&
-    !isNaN(pounds) )){
-      inches = 0;
-      stones = 0;
-      
-    }else if((isNaN(feet) &&
-    !isNaN(inches)) && (
-    !isNaN(stones) &&
-    isNaN(pounds) )){
-      feet = 0;
-      pounds = 0; 
-
-      
-    }
-    
-    else if((!isNaN(feet) &&
-    isNaN(inches)) && (
-    !isNaN(stones) &&
-    isNaN(pounds) )){
-      inches = 0;
-      pounds = 0;
-      
-    }
-    else if((isNaN(feet) &&
-    !isNaN(inches)) && (
-    isNaN(stones) &&
-    !isNaN(pounds) )){
-      feet = 0;
-      stones = 0;
-      
-    }else if((!isNaN(feet) &&
-    !isNaN(inches)) && (
-    !isNaN(stones) &&
-    isNaN(pounds) )){
-      pounds = 0;
-      
-    }else if((!isNaN(feet) &&
-    !isNaN(inches)) && (
-    isNaN(stones) &&
-    !isNaN(pounds) )){
-      stones = 0;
-      
-    }else if((!isNaN(feet) &&
-    isNaN(inches)) && (
-    !isNaN(stones) &&
-    !isNaN(pounds) )){
-      inches = 0;
-      
-    }else if((isNaN(feet) &&
-    !isNaN(inches)) && (
-    !isNaN(stones) &&
-    !isNaN(pounds) )){
-      feet = 0;
-      
-    }
-
-
-        
-    console.log(`Feet is ${feet} /Inches is ${inches}  /Stones is ${stones}/Pounds is ${pounds}`)
-
-
-    
     const heightInInches = feet * 12 + inches;
     const weightInPounds = stones * 14 + pounds;
     const heightInMeters = feetAndInchesToMeters(feet, inches);
