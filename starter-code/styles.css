@@ -220,6 +220,16 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"]::-moz-number-spin-box {
   -moz-appearance: textfield;
 }
+/* Target the placeholder of the input with type "number" */
+input[type="number"]::placeholder {
+  opacity: 0.25; /* Set the opacity of the placeholder text */
+}
+
+/* Ensure the input text remains at full opacity */
+input[type="number"] {
+  opacity: 1;
+}
+
 
 .unit {
   color: #345ff6;
@@ -660,6 +670,9 @@ input[type="number"]::-moz-number-spin-box {
     .calculator-form {
       margin-top: -70%;
       height: fit-content;
+    }
+    .mobile-text-block-view{
+      display: block;
     }
     .result-display-block {
       border-radius: 16px;

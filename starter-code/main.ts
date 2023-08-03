@@ -109,27 +109,27 @@ $(document).ready(function () {
     let minimumWeight: number;
     if (bmi < 18.5) {
       minimumWeight = 18.5 * Math.pow(heightInMeters, 2);
-      weightClassification.text("underweight");
+      weightClassification.text("underweight.");
       idealWeightStatement.text(
-        `Your ideal weight is less than ${minimumWeight.toFixed(2)}`
+        `Your ideal weight is less than ${minimumWeight.toFixed(2)}kgs.`
       );
     } else if (bmi >= 18.5 && bmi < 25) {
       minimumWeight = 18.5 * Math.pow(heightInMeters, 2);
       maximumWeight = 24.9 * Math.pow(heightInMeters, 2);
-      weightClassification.text("a healthy weight");
-      minimumIdealWeight.text(`${minimumWeight.toFixed(2)}`);
-      maximumIdealWeight.text(`${maximumWeight.toFixed(2)}`);
+      weightClassification.text("a healthy weight.");
+      idealWeightStatement.text(
+        `Your ideal weight is between than ${minimumWeight.toFixed(2)}kgs - ${maximumWeight.toFixed(2)}kgs.`)
     } else if (bmi >= 25 && bmi <= 29.9) {
       minimumWeight = 25 * Math.pow(heightInMeters, 2);
       maximumWeight = 29.9 * Math.pow(heightInMeters, 2);
-      weightClassification.text("overweight");
-      minimumIdealWeight.text(`${minimumWeight.toFixed(2)}`);
-      maximumIdealWeight.text(`${maximumWeight.toFixed(2)}`);
+      weightClassification.text("overweight.");
+      idealWeightStatement.text(
+        `Your ideal weight is between than ${minimumWeight.toFixed(2)}kgs - ${maximumWeight.toFixed(2)}kgs.`)
     } else if (bmi >= 30) {
-      weightClassification.text("obese");
+      weightClassification.text("obese.");
       maximumWeight = 30 * Math.pow(heightInMeters, 2);
       idealWeightStatement.text(
-        `Your ideal weight is greater than ${maximumWeight.toFixed(2)}`
+        `Your ideal weight is greater than ${maximumWeight.toFixed(2)}kgs.`
       );
     }
     welcomeBlock.hide();
@@ -236,29 +236,29 @@ $(document).ready(function () {
     let weightRangeMsg: string = "";
 
     if (bmi < 18.5) {
-      weightClassificationMsg = "underweight";
+      weightClassificationMsg = "underweight.";
       weightRangeMsg = `Your ideal weight is less than ${getWeightInStonesAndPounds(
         18.5,
         heightInMeters
-      )}`;
+      )}.`;
     } else if (bmi >= 18.5 && bmi < 25) {
-      weightClassificationMsg = "a healthy weight";
-      weightRangeMsg = `Ideal Weight Range: ${getWeightInStonesAndPounds(
+      weightClassificationMsg = "a healthy weight.";
+      weightRangeMsg = `Your ideal weight is between ${getWeightInStonesAndPounds(
         18.5,
         heightInMeters
-      )} - ${getWeightInStonesAndPounds(25, heightInMeters)}`;
+      )} - ${getWeightInStonesAndPounds(25, heightInMeters)}.`;
     } else if (bmi >= 25 && bmi <= 29.9) {
-      weightClassificationMsg = "overweight";
-      weightRangeMsg = `Ideal Weight Range: ${getWeightInStonesAndPounds(
+      weightClassificationMsg = "overweight.";
+      weightRangeMsg = `Your ideal weight is between ${getWeightInStonesAndPounds(
         25,
         heightInMeters
-      )} - ${getWeightInStonesAndPounds(29.9, heightInMeters)}`;
+      )} - ${getWeightInStonesAndPounds(29.9, heightInMeters)}.`;
     } else if (bmi >= 30) {
-      weightClassificationMsg = "obese";
+      weightClassificationMsg = "obese.";
       weightRangeMsg = `Your ideal weight is greater than ${getWeightInStonesAndPounds(
         30,
         heightInMeters
-      )}`;
+      )}.`;
     }
 
     weightClassification.text(weightClassificationMsg);

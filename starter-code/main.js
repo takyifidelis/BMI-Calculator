@@ -92,27 +92,25 @@ $(document).ready(function () {
         var minimumWeight;
         if (bmi < 18.5) {
             minimumWeight = 18.5 * Math.pow(heightInMeters, 2);
-            weightClassification.text("underweight");
-            idealWeightStatement.text("Your ideal weight is less than ".concat(minimumWeight.toFixed(2)));
+            weightClassification.text("underweight.");
+            idealWeightStatement.text("Your ideal weight is less than ".concat(minimumWeight.toFixed(2), "kgs."));
         }
         else if (bmi >= 18.5 && bmi < 25) {
             minimumWeight = 18.5 * Math.pow(heightInMeters, 2);
             maximumWeight = 24.9 * Math.pow(heightInMeters, 2);
-            weightClassification.text("a healthy weight");
-            minimumIdealWeight.text("".concat(minimumWeight.toFixed(2)));
-            maximumIdealWeight.text("".concat(maximumWeight.toFixed(2)));
+            weightClassification.text("a healthy weight.");
+            idealWeightStatement.text("Your ideal weight is between than ".concat(minimumWeight.toFixed(2), "kgs - ").concat(maximumWeight.toFixed(2), "kgs."));
         }
         else if (bmi >= 25 && bmi <= 29.9) {
             minimumWeight = 25 * Math.pow(heightInMeters, 2);
             maximumWeight = 29.9 * Math.pow(heightInMeters, 2);
-            weightClassification.text("overweight");
-            minimumIdealWeight.text("".concat(minimumWeight.toFixed(2)));
-            maximumIdealWeight.text("".concat(maximumWeight.toFixed(2)));
+            weightClassification.text("overweight.");
+            idealWeightStatement.text("Your ideal weight is between than ".concat(minimumWeight.toFixed(2), "kgs - ").concat(maximumWeight.toFixed(2), "kgs."));
         }
         else if (bmi >= 30) {
-            weightClassification.text("obese");
+            weightClassification.text("obese.");
             maximumWeight = 30 * Math.pow(heightInMeters, 2);
-            idealWeightStatement.text("Your ideal weight is greater than ".concat(maximumWeight.toFixed(2)));
+            idealWeightStatement.text("Your ideal weight is greater than ".concat(maximumWeight.toFixed(2), "kgs."));
         }
         welcomeBlock.hide();
         resultBlock.show();
@@ -184,20 +182,20 @@ $(document).ready(function () {
         var weightClassificationMsg = "";
         var weightRangeMsg = "";
         if (bmi < 18.5) {
-            weightClassificationMsg = "underweight";
-            weightRangeMsg = "Your ideal weight is less than ".concat(getWeightInStonesAndPounds(18.5, heightInMeters));
+            weightClassificationMsg = "underweight.";
+            weightRangeMsg = "Your ideal weight is less than ".concat(getWeightInStonesAndPounds(18.5, heightInMeters), ".");
         }
         else if (bmi >= 18.5 && bmi < 25) {
-            weightClassificationMsg = "a healthy weight";
-            weightRangeMsg = "Ideal Weight Range: ".concat(getWeightInStonesAndPounds(18.5, heightInMeters), " - ").concat(getWeightInStonesAndPounds(25, heightInMeters));
+            weightClassificationMsg = "a healthy weight.";
+            weightRangeMsg = "Your ideal weight is between ".concat(getWeightInStonesAndPounds(18.5, heightInMeters), " - ").concat(getWeightInStonesAndPounds(25, heightInMeters), ".");
         }
         else if (bmi >= 25 && bmi <= 29.9) {
-            weightClassificationMsg = "overweight";
-            weightRangeMsg = "Ideal Weight Range: ".concat(getWeightInStonesAndPounds(25, heightInMeters), " - ").concat(getWeightInStonesAndPounds(29.9, heightInMeters));
+            weightClassificationMsg = "overweight.";
+            weightRangeMsg = "Your ideal weight is between ".concat(getWeightInStonesAndPounds(25, heightInMeters), " - ").concat(getWeightInStonesAndPounds(29.9, heightInMeters), ".");
         }
         else if (bmi >= 30) {
-            weightClassificationMsg = "obese";
-            weightRangeMsg = "Your ideal weight is greater than ".concat(getWeightInStonesAndPounds(30, heightInMeters));
+            weightClassificationMsg = "obese.";
+            weightRangeMsg = "Your ideal weight is greater than ".concat(getWeightInStonesAndPounds(30, heightInMeters), ".");
         }
         weightClassification.text(weightClassificationMsg);
         weightRange.text(weightRangeMsg);
