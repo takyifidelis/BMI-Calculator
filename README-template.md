@@ -76,6 +76,7 @@ To see how you can add code snippets, see below:
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
+<input type="number" class="height-input-value ft-value" placeholder="0" min="0" required/>
 ```
 ```css
 /* Ways to remove the arrows in an input field*/
