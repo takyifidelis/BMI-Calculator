@@ -19,7 +19,7 @@ This is a solution to the [Body Mass Index Calculator challenge on Frontend Ment
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
-![OverView](./preview.jpg)
+![Design preview for the Body Mass Index Calculator coding challenge](./preview.jpg)
 
 ### The challenge
 
