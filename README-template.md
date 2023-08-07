@@ -66,9 +66,7 @@ Users should be able to:
 - CSS Grid
 - [jQuery](https://reactjs.org/) - JS library
 - [TypeScript](https://nextjs.org/) - JS Compiler
-- [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
@@ -112,14 +110,10 @@ const updateBMI = () => {
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Name - [Fidelis Takyi Mensah](https://www.your-site.com)
+- Twitter - [@fidelistakyi](https://www.twitter.com/fidelistakyi)
+- LinkedIn - [@fidelistakyi](https://www.linkedin.com/in/fidelis-mensah-3b13291a3?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bhdp%2BtdxsTjakElRy4MDVTg%3D%3D)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
-## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
