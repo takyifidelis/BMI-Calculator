@@ -34,7 +34,7 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
-*Desktop View Metric*
+**Desktop View Metric**
 <figure>
     <img src="./starter-code/assets/images/markdown/desktopViewMetric.png"
          alt="Desktop View Metric">
@@ -42,7 +42,7 @@ Users should be able to:
 </figure>
 
 
-*Desktop View Imperial.*
+**Desktop View Imperial.**
 <figure>
     <img src="./starter-code/assets/images/markdown/desktopViewImperial.png"
          alt="Desktop View Imperial">
