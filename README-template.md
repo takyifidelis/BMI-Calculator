@@ -33,6 +33,13 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
+![Desktop View Metric](./assets/images/markdown/desktopViewMetric.png)
+![Desktop View Imperial](./assets/images/markdown/desktopViewImperial.png)
+![BMI Calculator View](./assets/images/markdown/bmi-calculator.png)
+![Tablet View Metric](./assets/images/markdown/tabletView.png)
+![Mobile View Metric](./assets/images/markdown/mobileView-metric.png)
+![Mobile View Imperial](./assets/images/markdown/mobileViewImperial.png)
+
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
@@ -44,8 +51,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [BMI-Calculator](https://bmi-calculator-fidelis.netlify.app/)
+- GitHub Repo: [Link to the GitHub Repo](https://github.com/fidelismensah/BMI-Calculator)
 
 ## My process
 
@@ -55,9 +62,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
+- [jQuery](https://reactjs.org/) - JS library
+- [TypeScript](https://nextjs.org/) - JS Compiler
 - [Styled Components](https://styled-components.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
@@ -72,30 +78,37 @@ To see how you can add code snippets, see below:
 <h1>Some HTML code I'm proud of</h1>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+/* Ways to remove the arrows in an input field*/
+/* For WebKit-based browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
+
+/* For Mozilla Firefox */
+input[type="number"]::-moz-number-spin-box {
+  -moz-appearance: textfield;
+}
+
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+const updateBMI = () => {
+  console.log('...🎉')
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [jQuery](https://jquery.com/) - This helped me with the transition. I really liked how I was switching betweeen *Metric* and *Imperial* easily.
+- [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) - This is an amazing article which helped me finally understand TypeScript. I'd recommend it to anyone still learning this concept. A reader who completes the walkthrough should be able to:
+  -Read and understand commonly-used TypeScript syntax and patterns
+  -Explain the effects of important compiler options
+  -Correctly predict type system behavior in most cases
+
+
+
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 

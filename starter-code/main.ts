@@ -15,17 +15,11 @@ $(document).ready(function () {
   const resultDisplay = $(".bmi-result-display");
   const weightClassification = $(".weight-classification");
   const weightRange = $(".weight-range");
-  const maximumIdealWeight = $(".maximum-ideal-weight");
-  const minimumIdealWeight = $(".minimum-ideal-weight");
   const idealWeightStatement = $(".your-ideal-weight-is");
-  const clickBtn = $(".logo");
   const welcomeBlock = $(".result-block");
   const resultBlock = $(".result-display-block");
 
-  // VARIABLES
-  clickBtn.click(function () {
-    BMIimperial();
-  });
+ 
 
   // Toggle between the Radio Buttons
   metric.click(function () {
@@ -70,10 +64,7 @@ $(document).ready(function () {
     }
   }
 
-  // // InputWeight Text Input
-  // inputWeight.on("input", function () {
-  //   let content = $(this).text();
-  //   inputWeight.css("opacity", "1");
+
 
   // Calculate BMI for metric
 

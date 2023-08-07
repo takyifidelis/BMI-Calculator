@@ -15,16 +15,9 @@ $(document).ready(function () {
     var resultDisplay = $(".bmi-result-display");
     var weightClassification = $(".weight-classification");
     var weightRange = $(".weight-range");
-    var maximumIdealWeight = $(".maximum-ideal-weight");
-    var minimumIdealWeight = $(".minimum-ideal-weight");
     var idealWeightStatement = $(".your-ideal-weight-is");
-    var clickBtn = $(".logo");
     var welcomeBlock = $(".result-block");
     var resultBlock = $(".result-display-block");
-    // VARIABLES
-    clickBtn.click(function () {
-        BMIimperial();
-    });
     // Toggle between the Radio Buttons
     metric.click(function () {
         metric.addClass("activated-btn");
@@ -64,10 +57,6 @@ $(document).ready(function () {
             BMIimperial();
         }
     }
-    // // InputWeight Text Input
-    // inputWeight.on("input", function () {
-    //   let content = $(this).text();
-    //   inputWeight.css("opacity", "1");
     // Calculate BMI for metric
     var updateBMI = function () {
         //Calculate THE BMI in kg and cm
