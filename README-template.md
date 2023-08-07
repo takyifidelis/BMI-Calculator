@@ -97,6 +97,18 @@ input[type="number"]::-moz-number-spin-box {
 const updateBMI = () => {
   console.log('...🎉')
 }
+ const updateBMI = () => {
+    //Calculate THE BMI in kg and cm
+
+    const heightInCm: number = parseFloat(inputHeight.val() as string);
+    const weightInKg: number = parseFloat(inputWeight.val() as string);
+
+    if (isNaN(heightInCm) || isNaN(weightInKg)) {
+      welcomeBlock.show();
+      resultBlock.hide();
+
+      return;
+    }
 ```
 
 
