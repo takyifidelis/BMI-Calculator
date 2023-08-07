@@ -40,8 +40,9 @@ Users should be able to:
          alt="Desktop View Metric">
     <figcaption>Desktop View Metric</figcaption>
 </figure>
-<br>
 
+<br>
+<br>
 <figure>
     <img src="./starter-code/assets/images/markdown/desktopViewImperial.png"
          alt="Desktop View Imperial">
