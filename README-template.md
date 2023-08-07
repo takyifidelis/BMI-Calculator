@@ -38,7 +38,7 @@ Users should be able to:
 
 <img src="./starter-code/assets/images/markdown/desktopViewImperial.png" alt="Desktop View Imperial" width="400" >
 
-<img src="./starter-code/assets/images/markdown/bmi-calculator.png" alt="BMI Calculator Metric" width="400" height="600">
+<img src="./starter-code/assets/images/markdown/bmi-calculator.png" alt="BMI Calculator Metric" width="800" >
 
 
 
