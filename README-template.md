@@ -33,14 +33,14 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
-<img src="./starter-code/assets/images/markdown/desktopViewMetric.png" alt="Desktop View Metric" width="400">
-<img src="./starter-code/assets/images/markdown/desktopViewImperial.png" alt="Desktop View Imperial" width="400">
-<img src="./starter-code/assets/images/markdown/bmi-calculator.png" alt="BMI Calculator Metric" width="400">
-<img src="./starter-code/assets/images/markdown/tabletView.png" alt="Tablet View Metric" width="400">
+<img src="./starter-code/assets/images/markdown/desktopViewMetric.png" alt="Desktop View Metric" width="400" height="800">
+<img src="./starter-code/assets/images/markdown/desktopViewImperial.png" alt="Desktop View Imperial" width="400" height="800">
+<img src="./starter-code/assets/images/markdown/bmi-calculator.png" alt="BMI Calculator Metric" width="400" height="800">
+<img src="./starter-code/assets/images/markdown/tabletView.png" alt="Tablet View Metric" width="400" height="800">
 
-<img src="./starter-code/assets/images/markdown/mobileView-metric.png" alt="Mobile View Metric" width="400">
+<img src="./starter-code/assets/images/markdown/mobileView-metric.png" alt="Mobile View Metric" width="400" height="800">
 
-<img src="./starter-code/assets/images/markdown/mobileViewImperial.png" alt="Mobile View Imperial" width="400">
+<img src="./starter-code/assets/images/markdown/mobileViewImperial.png" alt="Mobile View Imperial" width="400" height="800">
 
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
