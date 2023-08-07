@@ -34,8 +34,11 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 ![Desktop View Metric](./starter-code/assets/images/markdown/desktopViewMetric.png)
+<img src="./starter-code/assets/images/markdown/desktopViewMetric.png" alt="Desktop View Metric" width="400">
 ![Desktop View Imperial](./starter-code/assets/images/markdown/desktopViewImperial.png)
+<img src="./starter-code/assets/images/markdown/desktopViewImperial.png" alt="Desktop View Metric" width="400">
 ![BMI Calculator View](./starter-code/assets/images/markdown/bmi-calculator.png)
+<img src="./starter-code/assets/images/markdown/bmi-calculator.png" alt="Desktop View Metric" width="400">
 ![Tablet View Metric](./starter-code/assets/images/markdown/tabletView.png)
 ![Mobile View Metric](./starter-code/assets/images/markdown/mobileView-metric.png)
 ![Mobile View Imperial](./starter-code/assets/images/markdown/mobileViewImperial.png)
@@ -103,14 +106,10 @@ const updateBMI = () => {
 
 - [jQuery](https://jquery.com/) - This helped me with the transition. I really liked how I was switching betweeen *Metric* and *Imperial* easily.
 - [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) - This is an amazing article which helped me finally understand TypeScript. I'd recommend it to anyone still learning this concept. A reader who completes the walkthrough should be able to:
-  -Read and understand commonly-used TypeScript syntax and patterns
-  -Explain the effects of important compiler options
-  -Correctly predict type system behavior in most cases
+  - Read and understand commonly-used TypeScript syntax and patterns
+  - Explain the effects of important compiler options
+  - Correctly predict type system behavior in most cases
 
-
-
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
