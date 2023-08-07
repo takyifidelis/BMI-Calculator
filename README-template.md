@@ -33,12 +33,12 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
-![Desktop View Metric](./assets/images/markdown/desktopViewMetric.png)
-![Desktop View Imperial](./assets/images/markdown/desktopViewImperial.png)
-![BMI Calculator View](./assets/images/markdown/bmi-calculator.png)
-![Tablet View Metric](./assets/images/markdown/tabletView.png)
-![Mobile View Metric](./assets/images/markdown/mobileView-metric.png)
-![Mobile View Imperial](./assets/images/markdown/mobileViewImperial.png)
+![Desktop View Metric](./starter-code/assets/images/markdown/desktopViewMetric.png)
+![Desktop View Imperial](./starter-code/assets/images/markdown/desktopViewImperial.png)
+![BMI Calculator View](./starter-code/assets/images/markdown/bmi-calculator.png)
+![Tablet View Metric](./starter-code/assets/images/markdown/tabletView.png)
+![Mobile View Metric](./starter-code/assets/images/markdown/mobileView-metric.png)
+![Mobile View Imperial](./starter-code/assets/images/markdown/mobileViewImperial.png)
 
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
