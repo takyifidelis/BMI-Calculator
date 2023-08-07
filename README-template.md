@@ -34,12 +34,14 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
-<img src="./starter-code/assets/images/markdown/desktopViewMetric.png" alt="Desktop View Metric" width="400"> <img src="./starter-code/assets/images/markdown/desktopViewImperial.png" alt="Desktop View Imperial" width="400" >
+
 <figure>
     <img src="./starter-code/assets/images/markdown/desktopViewMetric.png"
          alt="Desktop View Metric">
     <figcaption>Desktop View Metric</figcaption>
 </figure>
+
+
 <figure>
     <img src="./starter-code/assets/images/markdown/desktopViewImperial.png"
          alt="Desktop View Imperial">
