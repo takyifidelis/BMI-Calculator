@@ -19,6 +19,7 @@ This is a solution to the [Body Mass Index Calculator challenge on Frontend Ment
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
+![OverView](./preview.jpg)
 
 ### The challenge
 
@@ -34,8 +35,11 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 <img src="./starter-code/assets/images/markdown/desktopViewMetric.png" alt="Desktop View Metric" width="400">
+
 <img src="./starter-code/assets/images/markdown/desktopViewImperial.png" alt="Desktop View Imperial" width="400" >
+
 <img src="./starter-code/assets/images/markdown/bmi-calculator.png" alt="BMI Calculator Metric" width="400" height="600">
+
 <img src="./starter-code/assets/images/markdown/tabletView.png" alt="Tablet View Metric" width="400" height="600">
 
 <img src="./starter-code/assets/images/markdown/mobileView-metric.png" alt="Mobile View Metric" width="400" height="600">
