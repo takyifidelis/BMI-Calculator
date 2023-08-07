@@ -38,16 +38,15 @@ Users should be able to:
 <figure>
     <img src="./starter-code/assets/images/markdown/desktopViewMetric.png"
          alt="Desktop View Metric">
-    <figcaption>Desktop View Metric</figcaption>
+   
 </figure>
 
-<br>
-<br>
+
 *Desktop View Imperial.*
 <figure>
     <img src="./starter-code/assets/images/markdown/desktopViewImperial.png"
          alt="Desktop View Imperial">
-    <figcaption>Desktop View Imperial</figcaption>
+    
 </figure>
 
 
